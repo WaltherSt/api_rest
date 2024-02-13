@@ -18,17 +18,13 @@ public class Patient {
     @Id
     @NotNull
     private Long cedula;
-
     @NotBlank
     private String nombres;
-
     @NotBlank/**/
     private String apellidos;
-
     @NotBlank
     @Size(min = 7, max = 10)
     private String telefono;
-
     @NotBlank
     @Email
     private String correo;

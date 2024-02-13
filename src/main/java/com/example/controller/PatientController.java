@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/patients")
 public class PatientController {
@@ -28,10 +29,10 @@ public class PatientController {
         }
     }
 
-    @GetMapping(consumes = "application/json")
+    @GetMapping()
     public ResponseEntity<List<Patient>> getPatients() {
         try {
-            return new ResponseEntity<>(patientService.getPatients(), HttpStatus.FOUND);
+            return new ResponseEntity<>(patientService.getPatients(), HttpStatus.OK);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
