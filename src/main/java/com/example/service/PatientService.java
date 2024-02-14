@@ -14,19 +14,23 @@ public class PatientService {
     @Autowired
     PatientRepository patientRepository;
 
+    //Guardar nuevo paciente
     public void save(Patient data) {
         patientRepository.save(data);
     }
 
+    //Listar todos los pacientes
     public List<Patient> getPatients() {
         return patientRepository.findAll();
 
     }
 
+    //Listar pacientes por numero de cedula
     public Optional<Patient> getPatientById(Long cedula) {
         return patientRepository.findById(cedula);
     }
 
+    //Editar la informacion de un paciente
     public Patient updatePatient(Patient user, Long cedula) {
         Patient patient = patientRepository.getReferenceById(cedula);
 
@@ -38,6 +42,7 @@ public class PatientService {
         return patientRepository.save(patient);
     }
 
+    //Eliminar el registro de un paciente
     public void deletePatient(Long cedula) {
         patientRepository.deleteById(cedula);
     }

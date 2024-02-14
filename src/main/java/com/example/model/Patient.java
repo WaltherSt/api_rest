@@ -35,7 +35,5 @@ public class Patient {
 
     @NotBlank
     private String direccion;
-
-
 }
 
