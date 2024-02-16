@@ -18,6 +18,7 @@ public class PatientController {
     @Autowired
     PatientService patientService;
 
+    //metodo para REGISTRAR
     @PostMapping(consumes = "application/json")
     public ResponseEntity<Patient> addPatient(@Valid @RequestBody Patient patient) {
         try {
@@ -29,7 +30,12 @@ public class PatientController {
         }
     }
 
+<<<<<<< HEAD
+    //Metodo para CONSULTAR todos los registros
+    @GetMapping(consumes = "application/json")
+=======
     @GetMapping()
+>>>>>>> abe20313488f36afc62c47a818460f7d7e4130bd
     public ResponseEntity<List<Patient>> getPatients() {
         try {
             return new ResponseEntity<>(patientService.getPatients(), HttpStatus.OK);
@@ -39,6 +45,7 @@ public class PatientController {
         }
     }
 
+    //Metodo para CONSULTAR cada registro individualmente
     @GetMapping("/{cedula}")
     public ResponseEntity<Optional<Patient>> getPatientById(@PathVariable Long cedula) {
         try {
@@ -48,6 +55,7 @@ public class PatientController {
         }
     }
 
+    //Metodo para EDITAR un registro
     @PatchMapping("/{cedula}")
     public ResponseEntity<Patient> updatePatient(@RequestBody Patient patient, @PathVariable Long cedula) {
         try {
@@ -58,6 +66,7 @@ public class PatientController {
         }
     }
 
+    //Metodo para ELIMINAR un registro
     @DeleteMapping("/{cedula}")
     public ResponseEntity<String> deletePatient(@PathVariable Long cedula) {
         try {
