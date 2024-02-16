@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/patients")
 public class PatientController {
@@ -29,11 +30,15 @@ public class PatientController {
         }
     }
 
+<<<<<<< HEAD
     //Metodo para CONSULTAR todos los registros
     @GetMapping(consumes = "application/json")
+=======
+    @GetMapping()
+>>>>>>> abe20313488f36afc62c47a818460f7d7e4130bd
     public ResponseEntity<List<Patient>> getPatients() {
         try {
-            return new ResponseEntity<>(patientService.getPatients(), HttpStatus.FOUND);
+            return new ResponseEntity<>(patientService.getPatients(), HttpStatus.OK);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
