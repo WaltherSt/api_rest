@@ -32,7 +32,6 @@ public class PatientController {
 
 
     @GetMapping()
-
     public ResponseEntity<List<Patient>> getPatients() {
         try {
             return new ResponseEntity<>(patientService.getPatients(), HttpStatus.OK);
