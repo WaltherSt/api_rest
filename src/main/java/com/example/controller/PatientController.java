@@ -30,12 +30,9 @@ public class PatientController {
         }
     }
 
-<<<<<<< HEAD
-    //Metodo para CONSULTAR todos los registros
-    @GetMapping(consumes = "application/json")
-=======
+
     @GetMapping()
->>>>>>> abe20313488f36afc62c47a818460f7d7e4130bd
+
     public ResponseEntity<List<Patient>> getPatients() {
         try {
             return new ResponseEntity<>(patientService.getPatients(), HttpStatus.OK);
