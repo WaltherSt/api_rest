@@ -31,6 +31,7 @@ public class PatientController {
     }
 
 
+    //Metodo para CONSULTAR todos los registros
     @GetMapping()
     public ResponseEntity<List<Patient>> getPatients() {
         try {
